@@ -5,10 +5,11 @@ import Counters from "./components/counters";
 class App extends Component {
   state = {
     counters: [
-      { id: 1, value: 0 },
-      { id: 2, value: 0 },
-      { id: 3, value: 0 },
-      { id: 4, value: 0 }
+      { id: 1, description: "Pencil", value: 0, price: 11.00 },
+      { id: 2, description: "Pen", value: 0, price: 13.10 },
+      { id: 3, description: "Notebook", value: 0, price: 16.99 },
+      { id: 4, description: "Pencil case", value: 0, price: 19.45 },
+      { id: 5, description: "Eraser", value: 0, price: 21.89 }
     ]
   };
 
@@ -45,11 +46,21 @@ class App extends Component {
     window.location.reload();
   };
 
+  totalPrice = () => {
+    var total = 0;
+    const counters = [...this.state.counters.filter(c => c.value > 0)];
+    counters.forEach(c => {
+      total += c.value * c.price;
+    });
+    return total.toFixed(2);
+  }
+
   render() {
     return (
       <div>
         <NavBar
           totalCounters={this.state.counters.filter(c => c.value > 0).length}
+          totalPrice={"R$ "+this.totalPrice()}
         />
         <main className="container">
           <Counters

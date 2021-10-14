@@ -10,7 +10,15 @@ class Counter extends Component {
               {this.formatCount()}
             </span>
           </div>
-          <div className="col-md-4">
+          <div className="col-md-8">
+          <div style={{minWidth:450, display:"inline-block"}}>
+              <span>{this.props.counter.description+" "}
+              </span>
+            </div>
+            <div style={{minWidth:80, display:"inline-block"}}>
+              <span>{"R$ "+this.props.counter.price.toFixed(2)+" "}
+              </span>
+            </div>
             <button
               className="btn btn-secondary"
               onClick={() => this.props.onIncrement(this.props.counter)}
