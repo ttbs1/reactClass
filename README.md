@@ -1,3 +1,7 @@
+### LICENSE
+
+this project was copied and modified with study purpose only, base project is not mine as it's described at LICENSE file in the root of this repository
+
 # A simple counter-App using [React.js](https://reactjs.org)
 
 > **This tiny application is like adding,removing,deleting, resetting products which reflects in the total number of products into our shopping cart.**
